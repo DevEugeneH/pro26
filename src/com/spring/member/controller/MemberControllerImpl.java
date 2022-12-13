@@ -20,12 +20,11 @@ import com.spring.member.vo.MemberVO;
 public class MemberControllerImpl implements MemberController {
 	@Autowired
 	private MemberService memberService;
-
 	@Autowired
-	MemberVO memberVO;
+	private MemberVO memberVO;
 
 	@Override
-	@RequestMapping(value = "/member/listMembers.do", method = { RequestMethod.GET })
+	@RequestMapping(value = "/member/listMembers.do", method = RequestMethod.GET)
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		List membersList = memberService.listMembers();
@@ -88,14 +87,14 @@ public class MemberControllerImpl implements MemberController {
 			end = uri.length();
 		}
 
-		String fileName = uri.substring(begin, end);
-		if (fileName.indexOf(".") != -1) {
-			fileName = fileName.substring(0, fileName.lastIndexOf("."));
+		String viewName = uri.substring(begin, end);
+		if (viewName.indexOf(".") != -1) {
+			viewName = viewName.substring(0, viewName.lastIndexOf("."));
 		}
-		if (fileName.lastIndexOf("/") != -1) {
-			fileName = fileName.substring(fileName.lastIndexOf("/"), fileName.length());
+		if (viewName.lastIndexOf("/") != -1) {
+			viewName = viewName.substring(viewName.lastIndexOf("/"), viewName.length());
 		}
-		return fileName;
+		return viewName;
 	}
 
 }

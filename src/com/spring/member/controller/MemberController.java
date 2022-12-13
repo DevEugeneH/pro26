@@ -12,7 +12,11 @@ import com.spring.member.vo.MemberVO;
 
 public interface MemberController {
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView addMember(@ModelAttribute("info") MemberVO memberVO,HttpServletRequest request, HttpServletResponse response) throws Exception;
-	public ModelAndView removeMember(@RequestParam("id") String id, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+	public ModelAndView addMember(@ModelAttribute("info") MemberVO memberVO, HttpServletRequest request,
+			HttpServletResponse response) throws Exception;
+
+	public ModelAndView removeMember(@RequestParam("id") String id, HttpServletRequest request,
+			HttpServletResponse response) throws Exception;
 
 }
