@@ -14,11 +14,11 @@
 </head>
 
 <body>
-	<form method="post" action="${contextPath}/test/login2.do">
+	<form method="post" action="${contextPath}/test/login4.do">
 <!-- 		<input type="hidden" name="email" value="hong@test.com" /> -->
 		<table width="400">
 			<tr>
-				<td>아이디 <input type="text" name="userID2" size="10"></td>
+				<td>아이디 <input type="text" name="userID" size="10"></td>
 			</tr>
 			<tr>
 				<td>이름 <input type="text" name="userName" size="10"></td>
